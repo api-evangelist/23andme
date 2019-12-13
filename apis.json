@@ -1,0 +1,88 @@
+{
+    "name": "23andMe",
+    "description": "23andMe is the first and only genetic service available directly to you that includes reports that meet FDA standards.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/148-23andme.jpg",
+    "tags": [
+        "api lifeycle",
+        "api provider",
+        "biotechnology",
+        "dna",
+        "genetics",
+        "have api",
+        "medical",
+        "no api definition",
+        "profile",
+        "shopping"
+    ],
+    "created": "2019-12-12",
+    "modified": "2019-12-12",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/23andme\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "23andMe",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/148-23andme.jpg",
+            "humanURL": "https:\/\/www.23andme.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/23andme-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/23andme-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Developers",
+            "url": "https:\/\/api.23andme.com\/"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.23andme.com\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.23andme.com\/"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/23andme"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/23andme"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@23andMe.com"
+        },
+        {
+            "type": "Email",
+            "url": "hpa@23andme.com"
+        },
+        {
+            "type": "Email",
+            "url": "customercare@23andme.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/23andMe"
+        },
+        {
+            "type": "Transparency Report",
+            "url": "https:\/\/www.23andme.com\/transparency-report\/"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/23andMe"
+        }
+    ]
+}
