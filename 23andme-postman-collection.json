@@ -1,689 +1,1415 @@
 {
-    "id": "a180386feddfcd64260662ee32d02343",
-    "name": "23andMe",
-    "description": null,
-    "auth": null,
-    "events": null,
-    "variables": [],
-    "order": [],
-    "folders_order": [],
-    "folders": [],
-    "requests": [
+  "id": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+  "name": "23andMe",
+  "description": "**This is not an official 23andMe API reference--for storytelling purposes**\n\nWe are a mission-driven company with big dreams of using data to revolutionize health, wellness and research. We want to improve healthcare. We want to prevent disease. We want to give individuals control over their health data. We want to dramatically accelerate the pace of research. We want to develop better drugs smarter and faster. There is no comfort zone. We do not shy away from controversy, and we never give up. We are pioneering a new world, centered on the consumer, where success depends on bold ideas and unprecedented scale. Big is key, and thinking big drives us.\n\nURL: [API Reference](https://api.23andme.com/docs/reference/#profile)",
+  "auth": null,
+  "events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "f1fa5e57-5ec0-415b-aeec-0837f5a0a178",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "e69db7f8-5ac2-439b-880d-01c4f4cbfc1f",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variables": [],
+  "order": [
+    "84b85472-81c8-4bbf-89c2-3d7f252ccdac",
+    "3e0918b4-d3b9-48b6-949a-f33d01822e0c",
+    "41a556a2-5056-44f9-862a-0abbb59c639f",
+    "0d121536-929b-46ec-961d-c1010bcd8f21",
+    "fa08b735-093d-454f-b9c9-e298443281c9",
+    "ba79c65e-43a7-45ef-b578-1aeedb621269",
+    "813522f0-95a1-4086-a6dc-c04e1e1a7a8c",
+    "894fd263-ad3d-46cf-9c47-78a020c1d82b",
+    "89781fae-c0d5-48e7-b8f8-71aaee001a4f",
+    "a2a285db-1a24-4e47-bfb9-2a03f4bd88fe",
+    "57f22ea2-6869-4c60-acc4-b38f8184a1f1",
+    "ccb0e710-f464-47c0-8dc9-968b8f9d034b",
+    "57e1abc7-c774-4ab5-a25c-a7cf4c3fd609",
+    "2da16ebd-32ce-4afb-8f03-9a0475228c2c",
+    "09d49d9f-df5e-4c3d-bf6b-98d57b361f31",
+    "fe4837e3-a5ce-43aa-a91b-96ceae5300a6"
+  ],
+  "folders_order": [],
+  "protocolProfileBehavior": [],
+  "folders": [],
+  "requests": [
+    {
+      "id": "09d49d9f-df5e-4c3d-bf6b-98d57b361f31",
+      "name": "Get Profile Report",
+      "url": "{{23andme_base_url}}/3/profile/:demo_profile_id/report/:report_id/",
+      "description": "For the user's profile, gets the requested profile report and its results. See here for which profile reports are currently available.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
         {
-            "id": "67dab11d87f13c5fedfb4aab07c6b8f6",
-            "name": "Get Profile Report",
-            "url": "\/3\/profile\/:demo_profile_id\/report\/:report_id\/",
-            "description": "For the user's profile, gets the requested profile report and its results. See here for which profile reports are currently available.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "demo_profile_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "report_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
+          "key": "demo_profile_id",
+          "value": "{{demo_profile_id}}"
         },
         {
-            "id": "09a813a1a47ced40d1486c80b5214831",
-            "name": "Get Accessions",
-            "url": "\/3\/accession\/?chromosome={{chromosome}}",
-            "description": "Returns a list of accessions available on 23andMe platforms.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "chromosome",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "8593a9b53fcdd58befe776ec44c62c33",
-            "name": "Get Profile Reports",
-            "url": "\/3\/profile\/:demo_profile_id\/report\/",
-            "description": "For the user's profile, gets a list of all profile reports available through the API and their results. See here for which profile reports are currently available.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "demo_profile_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "5d6ceee33f9543ba46f0559fccbc574f",
-            "name": "Get Profiles",
-            "url": "\/3\/profile\/?account_id={{account_id}}",
-            "description": "Returns a list of active profiles owned by the account. The account_id must be provided.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "account_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "5d1b033243821f12d9c93a9ff2bffc65",
-            "name": "Get Profile",
-            "url": "\/3\/profile\/:demo_profile_id\/",
-            "description": "Returns a single profile for the given profile_id.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "demo_profile_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "fce24f5d9dfa69c53db1c8987e8a24b5",
-            "name": "Get Report",
-            "url": "\/3\/report\/:report_id\/",
-            "description": "Gets the requested report, which includes reference data describing the profile-level attributes in the corresponding profile report. See here for which reports are currently available.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "report_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "043f678153b00952fdcdcdb13ef98869",
-            "name": "Get Variant",
-            "url": "\/3\/profile\/demo_profile_id\/variant\/?accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0",
-            "description": "For the user's profile, gets a list of profile variants ordered by their start and end positions.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "accession_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "gene_name",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "chromosome_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "start",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "end",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "platform_label",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "limit",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "offset",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "50fe3453ca4e48f20d399dd0f0d2d9f3",
-            "name": "Get Marker",
-            "url": "\/3\/marker\/:marker_id\/",
-            "description": "Returns a single marker.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "marker_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "dc5b796e2c5cacb23c18a7f0a3f8c769",
-            "name": "Get Account",
-            "url": "\/3\/account\/",
-            "description": "Returns a list containing the user account associated with the token.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "ca336a50744d62c16a5381d972ca7528",
-            "name": "Get Profile Markers",
-            "url": "\/3\/profile\/demo_profile_id\/marker\/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0",
-            "description": "For a user's profile, gets a list of profile markers ordered by their start and end positions.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "accession_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "gene_name",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "start",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "end",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "limit",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "offset",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "9a2e977e85afd94948a4c26ff6ce03e3",
-            "name": "Get Profile Marker",
-            "url": "\/3\/profile\/demo_profile_id\/marker\/:marker_id\/",
-            "description": "For a user's profile, returns a single profile marker.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "marker_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "4af0ab3ee5a40aa690b48854cbc23fee",
-            "name": "Get Variants",
-            "url": "\/3\/variant\/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0",
-            "description": "Gets a list of variants ordered by their start and end positions. Must use exactly one of accession_id, chromosome_id or gene_name. Optionally, start and end may only be used with accession_id or chromosome_id.\n\nThe gene_name parameter will return a list of variants for that gene.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "accession_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "gene_name",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "chromosome_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "start",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "end",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "platform_label",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "limit",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "offset",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "03a568443204a12702a427f53fe697aa",
-            "name": "Get Markers",
-            "url": "\/3\/marker\/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0",
-            "description": "Gets a list of genetic markers ordered by their start and end positions. Must use one of either id or gene_name or accession_id. Optionally, start and end parameters may only be used with accession_id.\n\nThe id parameter will return a list of markers that match those ids. It must be a string of comma-sparated values (no more than 10000).",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "accession_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "gene_name",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "start",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "end",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "limit",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                },
-                {
-                    "key": "offset",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "1093085d396562bd64625a4624a44f3f",
-            "name": "Get Reports",
-            "url": "\/3\/report\/",
-            "description": "Gets a list of all reports available through the API. Each report object includes reference data describing the profile-level attributes in the corresponding profile report. See here for which reports are currently available.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "5381c8377bcf638c016cef75d1ffb7cf",
-            "name": "Get Accession",
-            "url": "\/3\/accession\/:accession_id\/",
-            "description": "Returns a single accession.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "accession_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
-        },
-        {
-            "id": "0e8749c2f4d548c3bb6a9670dc2b0864",
-            "name": "Get Genetic Phenotype Range Interaction (GPRI)",
-            "url": "\/3\/genetic_phenotype_range_interaction\/?predictor_id=linear_regression.gbmi.european_genetics_only_bmi_predictor",
-            "description": "For the supplied predictor_id, lists all GPRI objects associated with the given predictor.",
-            "data": [],
-            "dataMode": "raw",
-            "headerData": null,
-            "method": "GET",
-            "pathVariableData": [],
-            "queryParams": [
-                {
-                    "key": "predictor_id",
-                    "description": "",
-                    "value": "",
-                    "equals": true,
-                    "enabled": true
-                }
-            ],
-            "auth": null,
-            "events": null,
-            "folder": null,
-            "protocolProfileBehavior": {
-                "disableBodyPruning": true
-            },
-            "responses": [],
-            "currentHelper": null,
-            "helperAttributes": null,
-            "collectionId": "a180386feddfcd64260662ee32d02343",
-            "rawModeData": ""
+          "key": "report_id",
+          "value": "wellness.muscle_composition"
         }
-    ]
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "6bcf2a46-567c-4a32-b662-8181f48fe456",
+          "name": "Get Profile Report - Wellness",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n  \"report_id\": \"wellness.muscle_composition\",\n  \"report_type\": \"wellness\",\n  \"title\": \"Muscle Composition\",\n  \"details\": {\n    \"genes\": [\n      {\n        \"id\": \"ACTN3\",\n        \"chromosome\": \"11\",\n        \"gene_overview\": \"The ACTN3 gene contains instructions for making alpha-actinin-3, a protein found in certain types of fast-twitch muscle fibers. Some people have a non-functional variant of the ACTN3 gene and do not produce the alpha-actinin-3 protein. However, most of the elite power athletes who have been studied (including sprinters, throwers, and jumpers) have the functional ACTN3 variant and do produce this protein.\\n\"\n      }\n    ],\n    \"markers\": [\n      {\n        \"id\": \"rs1815739\",\n        \"label\": \"R577X\",\n        \"alternate_ids\": [],\n        \"gene_names\": [\n          \"ACTN3\"\n        ],\n        \"gene_description\": \"ACTN3\",\n        \"mutation_type\": \"Substitution\",\n        \"biological_explanation\": \"The marker we tested comes in two different forms: C and T. The T version is non-functional, which means the ACTN3 gene can't produce the alpha-actinin-3 protein. This marker has been studied the most in individuals of European descent.\\n\",\n        \"accession_id\": \"NC_000011.9\",\n        \"start\": 66328094,\n        \"end\": 66328095,\n        \"is_assayed\": true,\n        \"is_determined\": true,\n        \"is_genotyped\": true,\n        \"is_no_call\": false,\n        \"variants\": [\n          {\n            \"accession_id\": \"NC_000011.9\",\n            \"start\": 66328094,\n            \"end\": 66328095,\n            \"one_based_start\": 66328095,\n            \"one_based_end\": 66328096,\n            \"allele\": \"C\",\n            \"dosage\": 2,\n            \"is_no_call\": false,\n            \"is_assayed\": true,\n            \"has_effect\": false\n          },\n          {\n            \"accession_id\": \"NC_000011.9\",\n            \"start\": 66328094,\n            \"end\": 66328095,\n            \"one_based_start\": 66328095,\n            \"one_based_end\": 66328096,\n            \"allele\": \"T\",\n            \"dosage\": 0,\n            \"is_no_call\": false,\n            \"is_assayed\": true,\n            \"has_effect\": true\n          }\n        ],\n        \"known_mutations\": [\n          {\n            \"effect_allele\": \"T\",\n            \"typical_allele\": \"C\",\n            \"mutation_type\": \"Substitution\"\n          }\n        ]\n      }\n    ]\n  },\n  \"summary\": {\n    \"is_determined\": true,\n    \"has_effect\": false,\n    \"effect_allele_count\": 0,\n    \"no_call_marker_count\": 0,\n    \"assessment\": {\n      \"id\": \"functional_actn3\",\n      \"message\": \"Common in elite power athletes\"\n    }\n  }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "demo_profile_id",
+                "value": "{{demo_profile_id}}"
+              },
+              {
+                "key": "report_id",
+                "value": "wellness.muscle_composition"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/profile/:demo_profile_id/report/:report_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "09d49d9f-df5e-4c3d-bf6b-98d57b361f31",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        },
+        {
+          "id": "9ba035e3-9bf2-48ca-9a0a-cad5aaadc79c",
+          "name": "Get Profile Report - Genetic Weight",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"report_id\": \"genetic_weight\",\n    \"report_type\": \"genetic_weight\",\n    \"title\": \"Genetic Weight\",\n    \"details\": {\n        \"model_inputs\": {\n            \"age\": 40,\n            \"sex\": \"female\",\n            \"model_ethnicity\": \"European\",\n            \"given_ethnicity\": null\n        },\n        \"genetics_predictor\": {\n            \"id\": \"linear_regression.gbmi.european_genetics_only_bmi_predictor\",\n            \"bin_number\": 6\n        }\n    },\n    \"summary\": {\n        \"has_effect\": true,\n        \"is_determined\": true,\n        \"baseline_bmi\": 25.6655069716813,\n        \"predicted_bmi\": 24.722240176130192,\n        \"relative_difference\": -0.0367523149490826,\n        \"outcome\": {\n            \"id\": \"less\",\n            \"text\": \"Predisposed to weigh less than average\"\n        }\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "demo_profile_id",
+                "value": "{{demo_profile_id}}"
+              },
+              {
+                "key": "report_id",
+                "value": "genetic_weight"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/profile/:demo_profile_id/report/:report_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "09d49d9f-df5e-4c3d-bf6b-98d57b361f31",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "demo_profile_id": "{{demo_profile_id}}",
+        "report_id": "wellness.muscle_composition"
+      }
+    },
+    {
+      "id": "0d121536-929b-46ec-961d-c1010bcd8f21",
+      "name": "Get Accessions",
+      "url": "{{23andme_base_url}}/3/accession/?chromosome={{chromosome}}",
+      "description": "Returns a list of accessions available on 23andMe platforms.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "chromosome",
+          "value": "{{chromosome}}",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "1178f672-daec-4020-9a03-d51514f8e93e",
+          "name": "Get Accession",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"id\": \"NC_000001.10\",\n            \"chromosome\": \"1\",\n            \"length\": 249250621\n        },\n        {\n            \"id\": \"NC_000002.11\",\n            \"chromosome\": \"2\",\n            \"length\": 243199373\n        },\n        ...\n    ],\n    \"links\": {\n        \"next\": null\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "chromosome",
+                "value": "{{chromosome}}",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "https://api.23andme.com/3/accession/?chromosome={{chromosome}}"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "0d121536-929b-46ec-961d-c1010bcd8f21",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "2da16ebd-32ce-4afb-8f03-9a0475228c2c",
+      "name": "Get Profile Reports",
+      "url": "{{23andme_base_url}}/3/profile/:demo_profile_id/report/",
+      "description": "For the user's profile, gets a list of all profile reports available through the API and their results. See here for which profile reports are currently available.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
+        {
+          "key": "demo_profile_id",
+          "value": "{{demo_profile_id}}"
+        }
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "39009621-90a1-4ada-9fc2-31c113d5cd82",
+          "name": "Get Profile Report",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"report_id\": \"wellness.alcohol_flush\",\n            \"report_type\": \"wellness\",\n            \"title\": \"Alcohol Flush Reaction\",\n            \"details\": {\n                ...\n            },\n            \"summary\": {\n                ...\n                \"assessment\": {\n                    \"id\": \"little_flushing\",\n                    \"message\": \"Unlikely to flush after drinking alcohol\"\n                }\n            }\n        },\n        {\n            \"report_id\": \"wellness.caffeine_consumption\",\n            ...\n        }, ...\n    ],\n    \"links\": {\n        \"next\": null\n    {\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "demo_profile_id",
+                "value": "{{demo_profile_id}}"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/profile/:demo_profile_id/report/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "2da16ebd-32ce-4afb-8f03-9a0475228c2c",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "demo_profile_id": "{{demo_profile_id}}"
+      }
+    },
+    {
+      "id": "3e0918b4-d3b9-48b6-949a-f33d01822e0c",
+      "name": "Get Profiles",
+      "url": "{{23andme_base_url}}/3/profile/?account_id={{account_id}}",
+      "description": "Returns a list of active profiles owned by the account. The account_id must be provided.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "account_id",
+          "value": "{{account_id}}",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "a3222aba-7757-4757-8fef-a9221c6b9938",
+          "name": "Get Profile",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"id\": \"demo_profile_id\",\n            \"first_name\": \"Erin\",\n            \"last_name\": \"Mendel\",\n            \"is_genotyped\": true,\n            \"is_ancestry_only\": false,\n            \"profile_image\": null\n        }\n    ],\n    \"links\": {\n        \"next\": null\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "account_id",
+                "value": "{{account_id}}",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "https://api.23andme.com/3/profile/?account_id={{account_id}}"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "3e0918b4-d3b9-48b6-949a-f33d01822e0c",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "41a556a2-5056-44f9-862a-0abbb59c639f",
+      "name": "Get Profile",
+      "url": "{{23andme_base_url}}/3/profile/:demo_profile_id/",
+      "description": "Returns a single profile for the given profile_id.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
+        {
+          "key": "demo_profile_id",
+          "value": "{{demo_profile_id}}"
+        }
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "fe0abf0d-6811-41eb-9da3-30651cd3564c",
+          "name": "Get Profile",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"id\": \"demo_profile_id\",\n    \"first_name\": \"Erin\",\n    \"last_name\": \"Mendel\",\n    \"is_genotyped\": true,\n    \"is_ancestry_only\": false,\n    \"profile_image\": null\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "demo_profile_id",
+                "value": "{{demo_profile_id}}"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/profile/:demo_profile_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "41a556a2-5056-44f9-862a-0abbb59c639f",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "demo_profile_id": "{{demo_profile_id}}"
+      }
+    },
+    {
+      "id": "57e1abc7-c774-4ab5-a25c-a7cf4c3fd609",
+      "name": "Get Report",
+      "url": "{{23andme_base_url}}/3/report/:report_id/",
+      "description": "Gets the requested report, which includes reference data describing the profile-level attributes in the corresponding profile report. See here for which reports are currently available.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
+        {
+          "key": "report_id",
+          "value": "wellness.muscle_composition"
+        }
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "0131da18-4a3d-49e8-b80e-c04a37cf1807",
+          "name": "Get Report - Genetic Weight",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n  \"report_id\": \"genetic_weight\",\n  \"report_type\": \"genetic_weight\",\n  \"title\": \"Genetic Weight\",\n  \"details\": {\n    \"model_inputs\": {\n      \"age\": {\n        \"type\": \"integer\",\n        \"required\": true\n      },\n      \"sex\": {\n        \"type\": \"string\",\n        \"required\": true\n      },\n      \"model_ethnicity\": {\n        \"type\": \"string\",\n        \"required\": true\n      },\n      \"given_ethnicity\": {\n        \"type\": \"string\",\n        \"required\": false\n      }\n    },\n    \"genetics_predictor\": {\n      \"id\": {\n        \"type\": \"string\",\n        \"required\": true\n      },\n      \"bin_number\": {\n        \"type\": \"integer\",\n        \"required\": true\n      }\n    }\n  },\n  \"summary\": {\n    \"has_effect\": {\n      \"type\": \"boolean\",\n      \"required\": true\n    },\n    \"is_determined\": {\n      \"type\": \"boolean\",\n      \"required\": true\n    },\n    \"baseline_bmi\": {\n      \"type\": \"number\",\n      \"required\": true\n    },\n    \"predicted_bmi\": {\n      \"type\": \"number\",\n      \"required\": true\n    },\n    \"relative_difference\": {\n      \"type\": \"number\",\n      \"required\": true\n    },\n    \"outcome\": {\n      \"type\": \"object\",\n      \"required\": true,\n      \"enum\": [\n        {\n          \"id\": \"less\",\n          \"text\": \"Predisposed to weigh less than average\"\n        },\n        {\n          \"id\": \"average\",\n          \"text\": \"Predisposed to weigh about average\"\n        },\n        {\n          \"id\": \"more\",\n          \"text\": \"Predisposed to weigh more than average\"\n        }\n      ]\n    }\n  }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "report_id",
+                "value": "genetic_weight"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/report/:report_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "57e1abc7-c774-4ab5-a25c-a7cf4c3fd609",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        },
+        {
+          "id": "cee2e13c-6c67-4535-a56b-3cc6a5101d12",
+          "name": "Get Report  - Wellness",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n  \"report_id\": \"wellness.muscle_composition\",\n  \"report_type\": \"wellness\",\n  \"title\": \"Muscle Composition\",\n  \"details\": {\n    \"genes\": [\n      {\n        \"id\": \"ACTN3\",\n        \"chromosome\": \"11\",\n        \"gene_overview\": \"The ACTN3 gene contains instructions for making alpha-actinin-3, a protein found in certain types of fast-twitch muscle fibers. Some people have a non-functional variant of the ACTN3 gene and do not produce the alpha-actinin-3 protein. However, most of the elite power athletes who have been studied (including sprinters, throwers, and jumpers) have the functional ACTN3 variant and do produce this protein.\\n\"\n      }\n    ],\n    \"markers\": [\n      {\n        \"id\": \"rs1815739\",\n        \"label\": \"R577X\",\n        \"alternate_ids\": [],\n        \"gene_names\": [\n          \"ACTN3\"\n        ],\n        \"gene_description\": \"ACTN3\",\n        \"mutation_type\": \"Substitution\",\n        \"biological_explanation\": \"The marker we tested comes in two different forms: C and T. The T version is non-functional, which means the ACTN3 gene can't produce the alpha-actinin-3 protein. This marker has been studied the most in individuals of European descent.\\n\",\n        \"accession_id\": \"NC_000011.9\",\n        \"start\": 66328094,\n        \"end\": 66328095,\n        \"is_assayed\": {\n          \"type\": \"boolean\",\n          \"required\": true\n        },\n        \"is_determined\": {\n          \"type\": \"boolean\",\n          \"required\": true\n        },\n        \"is_genotyped\": {\n          \"type\": \"boolean\",\n          \"required\": true\n        },\n        \"is_no_call\": {\n          \"type\": \"boolean\",\n          \"required\": true\n        },\n        \"variants\": [\n          {\n            \"accession_id\": \"NC_000011.9\",\n            \"start\": 66328094,\n            \"end\": 66328095,\n            \"one_based_start\": 66328095,\n            \"one_based_end\": 66328096,\n            \"allele\": \"C\",\n            \"dosage\": {\n              \"type\": \"number\",\n              \"required\": false\n            },\n            \"is_no_call\": {\n              \"type\": \"boolean\",\n              \"required\": true\n            },\n            \"is_assayed\": {\n              \"type\": \"boolean\",\n              \"required\": true\n            },\n            \"has_effect\": false\n          },\n          {\n            \"accession_id\": \"NC_000011.9\",\n            \"start\": 66328094,\n            \"end\": 66328095,\n            \"one_based_start\": 66328095,\n            \"one_based_end\": 66328096,\n            \"allele\": \"T\",\n            \"dosage\": {\n              \"type\": \"number\",\n              \"required\": false\n            },\n            \"is_no_call\": {\n              \"type\": \"boolean\",\n              \"required\": true\n            },\n            \"is_assayed\": {\n              \"type\": \"boolean\",\n              \"required\": true\n            },\n            \"has_effect\": true\n          }\n        ],\n        \"known_mutations\": [\n          {\n            \"effect_allele\": \"T\",\n            \"typical_allele\": \"C\",\n            \"mutation_type\": \"Substitution\"\n          }\n        ]\n      }\n    ]\n  },\n  \"summary\": {\n    \"is_determined\": {\n      \"type\": \"boolean\",\n      \"required\": true\n    },\n    \"has_effect\": {\n      \"type\": \"boolean\",\n      \"required\": true\n    },\n    \"effect_allele_count\": {\n      \"type\": \"integer\",\n      \"required\": true\n    },\n    \"no_call_marker_count\": {\n      \"type\": \"integer\",\n      \"required\": true\n    },\n    \"assessment\": {\n      \"type\": \"object\",\n      \"required\": true,\n      \"enum\": [\n        {\n          \"id\": \"functional_actn3\",\n          \"message\": \"Common in elite power athletes\"\n        },\n        {\n          \"id\": \"nonfunctional_actn3_het\",\n          \"message\": \"Common in elite power athletes\"\n        },\n        {\n          \"id\": \"nonfunctional_actn3\",\n          \"message\": \"Uncommon in elite power athletes\"\n        },\n        {\n          \"id\": \"not_determined\",\n          \"message\": \"Result not determined\"\n        }\n      ]\n    }\n  }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "report_id",
+                "value": "wellness.muscle_composition"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/report/:report_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "57e1abc7-c774-4ab5-a25c-a7cf4c3fd609",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "report_id": "wellness.muscle_composition"
+      }
+    },
+    {
+      "id": "57f22ea2-6869-4c60-acc4-b38f8184a1f1",
+      "name": "Get Variant",
+      "url": "{{23andme_base_url}}/3/profile/demo_profile_id/variant/?accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0",
+      "description": "For the user's profile, gets a list of profile variants ordered by their start and end positions.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "accession_id",
+          "value": "NC_012920.1",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "gene_name",
+          "value": "ACTN3",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "chromosome_id",
+          "value": " MT",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "start",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "end",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "platform_label",
+          "value": " ILMN_550",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "limit",
+          "value": "1000",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "6ef0a65a-a817-412a-b8e2-ff5beac9b65e",
+          "name": "Get Variant",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 2,\n            \"end\": 3,\n            \"allele\": \"C\",\n            \"platform_labels\": [\n                \"ILMN_550Qv1_CUSTOMv2\",\n                \"ILMN_CUSTOMv4\",\n                \"ILMN_OMNIEXv3_CUSTOMv3\"\n            ],\n            \"dosage\": 0,\n            \"is_assayed\": true,\n            \"is_no_call\": false\n        },\n        {\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 2,\n            \"end\": 3,\n            \"allele\": \"T\",\n            \"platform_labels\": [\n                \"ILMN_550Qv1_CUSTOMv2\",\n                \"ILMN_CUSTOMv4\",\n                \"ILMN_OMNIEXv3_CUSTOMv3\"\n            ],\n            \"dosage\": 1,\n            \"is_assayed\": true,\n            \"is_no_call\": false\n        },\n        ...\n    ],\n    \"links\": {\n        \"next\": \"https://api.23andme.com/3/profile/demo_profile_id/variant/?accession_id=NC_012920.1&limit=100&offset=100\"\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "accession_id",
+                "value": "NC_012920.1",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "gene_name",
+                "value": "ACTN3",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "chromosome_id",
+                "value": " MT",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "start",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "end",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "platform_label",
+                "value": " ILMN_550",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "limit",
+                "value": "1000",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "offset",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "https://api.23andme.com/3/profile/demo_profile_id/variant/?accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "57f22ea2-6869-4c60-acc4-b38f8184a1f1",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "813522f0-95a1-4086-a6dc-c04e1e1a7a8c",
+      "name": "Get Marker",
+      "url": "{{23andme_base_url}}/3/marker/:marker_id/",
+      "description": "Returns a single marker.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
+        {
+          "key": "marker_id",
+          "value": "rs10195681"
+        }
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "04862aed-542a-48e5-bba5-0de16e13531d",
+          "name": "Get Marker",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"id\": \"rs10195681\",\n    \"alternate_ids\": [],\n    \"gene_names\": [],\n    \"accession_id\": \"NC_000002.11\",\n    \"start\": 18673,\n    \"end\": 18674,\n    \"variants\": [\n        {\n            \"accession_id\": \"NC_000002.11\",\n            \"start\": 18673,\n            \"end\": 18674,\n            \"allele\": \"A\",\n            \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n        },\n        {\n            \"accession_id\": \"NC_000002.11\",\n            \"start\": 18673,\n            \"end\": 18674,\n            \"allele\": \"C\",\n            \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n        }\n    ]\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "marker_id",
+                "value": "rs10195681"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/marker/:marker_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "813522f0-95a1-4086-a6dc-c04e1e1a7a8c",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "marker_id": "rs10195681"
+      }
+    },
+    {
+      "id": "84b85472-81c8-4bbf-89c2-3d7f252ccdac",
+      "name": "Get Account",
+      "url": "{{23andme_base_url}}/3/account/",
+      "description": "Returns a list containing the user account associated with the token.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "c1e8d83b-1442-4575-9a48-6d71de6556ba",
+          "name": "Get Account",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"id\": \"demo_account_id\",\n    \"first_name\": \"Erin\",\n    \"last_name\": \"Mendel\",\n    \"email\": \"erinmendel+nobody@23andme.com\",\n    \"profiles\": [\n        {\n            \"id\": \"demo_profile_id\",\n            \"first_name\": \"Erin\",\n            \"last_name\": \"Mendel\",\n            \"is_genotyped\": true,\n            \"is_ancestry_only\": false,\n            \"profile_image\": null\n        }\n    ]\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/account/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "84b85472-81c8-4bbf-89c2-3d7f252ccdac",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "894fd263-ad3d-46cf-9c47-78a020c1d82b",
+      "name": "Get Profile Markers",
+      "url": "{{23andme_base_url}}/3/profile/demo_profile_id/marker/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0",
+      "description": "For a user's profile, gets a list of profile markers ordered by their start and end positions.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "id",
+          "value": "rs10195681,i4001358",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "accession_id",
+          "value": "NC_012920.1",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "gene_name",
+          "value": "ACTN3",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "start",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "end",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "limit",
+          "value": "1000",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "3d3156b8-5891-41cb-b310-7807bf555e50",
+          "name": "Get Profile Marker",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"id\": \"i4001200\",\n            \"alternate_ids\": [],\n            \"gene_names\": [],\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 2,\n            \"end\": 3,\n            \"is_genotyped\": true,\n            \"is_assayed\": true,\n            \"is_no_call\": false,\n            \"variants\": [\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 2,\n                    \"end\": 3,\n                    \"allele\": \"C\",\n                    \"platform_labels\": [\"ILMN_550Qv1_CUSTOMv2\", \"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n                    \"dosage\": 0,\n                    \"is_assayed\": true,\n                    \"is_no_call\": false\n                },\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 2,\n                    \"end\": 3,\n                    \"allele\": \"T\",\n                    \"platform_labels\": [\"ILMN_550Qv1_CUSTOMv2\", \"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n                    \"dosage\": 1,\n                    \"is_assayed\": true,\n                    \"is_no_call\": false\n                }\n            ]\n        },\n        {\n            \"id\": \"i4001110\",\n            \"alternate_ids\": [],\n            \"gene_names\": [],\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 6,\n            \"end\": 7,\n            \"is_genotyped\": false,\n            \"is_assayed\": false,\n            \"is_no_call\": false,\n            \"variants\": [\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 6,\n                    \"end\": 7,\n                    \"allele\": \"A\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n                    \"dosage\": null,\n                    \"is_assayed\": false,\n                    \"is_no_call\": false\n                },\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 6,\n                    \"end\": 7,\n                    \"allele\": \"G\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n                    \"dosage\": null,\n                    \"is_assayed\": false,\n                    \"is_no_call\": false\n                }\n            ]\n        },\n        {\n            \"id\": \"i4001358\",\n            \"alternate_ids\": [],\n            \"gene_names\": [],\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 8,\n            \"end\": 9,\n            \"is_genotyped\": false,\n            \"is_assayed\": false,\n            \"is_no_call\": false,\n            \"variants\": [\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 8,\n                    \"end\": 9,\n                    \"allele\": \"A\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n                    \"dosage\": null,\n                    \"is_assayed\": false,\n                    \"is_no_call\": false\n                },\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 8,\n                    \"end\": 9,\n                    \"allele\": \"G\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n                    \"dosage\": null,\n                    \"is_assayed\": false,\n                    \"is_no_call\": false\n                }\n            ]\n        }\n        ...\n    ],\n    \"links\": {\n        \"next\": \"https://api.23andme.com/3/profile/demo_profile_id/marker/?accession_id=NC_012920.1&limit=100&offset=100\"\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "id",
+                "value": "rs10195681,i4001358",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "accession_id",
+                "value": "NC_012920.1",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "gene_name",
+                "value": "ACTN3",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "start",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "end",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "limit",
+                "value": "1000",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "offset",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "\"https://api.23andme.com/3/profile/demo_profile_id/marker/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "894fd263-ad3d-46cf-9c47-78a020c1d82b",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "89781fae-c0d5-48e7-b8f8-71aaee001a4f",
+      "name": "Get Profile Marker",
+      "url": "{{23andme_base_url}}/3/profile/demo_profile_id/marker/:marker_id/",
+      "description": "For a user's profile, returns a single profile marker.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
+        {
+          "key": "marker_id",
+          "value": "rs10195681"
+        }
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "1df6af17-8005-42fd-8cc1-18c0ab074a10",
+          "name": "Get Profile Marker",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"id\": \"rs10195681\",\n    \"alternate_ids\": [],\n    \"gene_names\": [],\n    \"accession_id\": \"NC_000002.11\",\n    \"start\": 18673,\n    \"end\": 18674,\n    \"is_genotyped\": true,\n    \"is_assayed\": true,\n    \"is_no_call\": false,\n    \"variants\": [\n        {\n            \"accession_id\": \"NC_000002.11\",\n            \"start\": 18673,\n            \"end\": 18674,\n            \"allele\": \"A\",\n            \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n            \"dosage\": 0,\n            \"is_assayed\": true,\n            \"is_no_call\": false\n        },\n        {\n            \"accession_id\": \"NC_000002.11\",\n            \"start\": 18673,\n            \"end\": 18674,\n            \"allele\": \"C\",\n            \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"],\n            \"dosage\": 2,\n            \"is_assayed\": true,\n            \"is_no_call\": false\n        }\n    ]\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "marker_id",
+                "value": "rs10195681"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/profile/demo_profile_id/marker/:marker_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "89781fae-c0d5-48e7-b8f8-71aaee001a4f",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "marker_id": "rs10195681"
+      }
+    },
+    {
+      "id": "a2a285db-1a24-4e47-bfb9-2a03f4bd88fe",
+      "name": "Get Variants",
+      "url": "{{23andme_base_url}}/3/variant/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0",
+      "description": "Gets a list of variants ordered by their start and end positions. Must use exactly one of accession_id, chromosome_id or gene_name. Optionally, start and end may only be used with accession_id or chromosome_id.\n\nThe gene_name parameter will return a list of variants for that gene.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "id",
+          "value": "rs10195681,i4001358",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "accession_id",
+          "value": "NC_012920.1",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "gene_name",
+          "value": "ACTN3",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "chromosome_id",
+          "value": " MT",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "start",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "end",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "platform_label",
+          "value": " ILMN_550",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "limit",
+          "value": "1000",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "9d92e997-0248-4cc3-b9a9-9b39a518c30e",
+          "name": "Get Variant",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 2,\n            \"end\": 3,\n            \"allele\": \"C\",\n            \"platform_labels\": [\n                \"ILMN_550Qv1_CUSTOMv2\",\n                \"ILMN_CUSTOMv4\",\n                \"ILMN_OMNIEXv3_CUSTOMv3\"\n            ]\n        },\n        {\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 2,\n            \"end\": 3,\n            \"allele\": \"T\",\n            \"platform_labels\": [\n                \"ILMN_550Qv1_CUSTOMv2\",\n                \"ILMN_CUSTOMv4\",\n                \"ILMN_OMNIEXv3_CUSTOMv3\"\n            ]\n        },\n        ...\n    ],\n    \"links\": {\n        \"next\": \"https://api.23andme.com/3/variant/?accession_id=NC_012920.1&limit=100&offset=100\"\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "id",
+                "value": "rs10195681,i4001358",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "accession_id",
+                "value": "NC_012920.1",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "gene_name",
+                "value": "ACTN3",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "chromosome_id",
+                "value": " MT",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "start",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "end",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "platform_label",
+                "value": " ILMN_550",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "limit",
+                "value": "1000",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "offset",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "https://api.23andme.com/3/variant/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "a2a285db-1a24-4e47-bfb9-2a03f4bd88fe",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "ba79c65e-43a7-45ef-b578-1aeedb621269",
+      "name": "Get Markers",
+      "url": "{{23andme_base_url}}/3/marker/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0",
+      "description": "Gets a list of genetic markers ordered by their start and end positions. Must use one of either id or gene_name or accession_id. Optionally, start and end parameters may only be used with accession_id.\n\nThe id parameter will return a list of markers that match those ids. It must be a string of comma-sparated values (no more than 10000).",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "id",
+          "value": "rs10195681,i4001358",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "accession_id",
+          "value": "NC_012920.1",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "gene_name",
+          "value": "ACTN3",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "start",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "end",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "limit",
+          "value": "1000",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        },
+        {
+          "key": "offset",
+          "value": "0",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "e9521446-2769-49ec-a0eb-2e01d68998e1",
+          "name": "Get Markers",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"id\": \"i4001200\",\n            \"alternate_ids\": [],\n            \"gene_names\": [],\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 2,\n            \"end\": 3,\n            \"variants\": [\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 2,\n                    \"end\": 3,\n                    \"allele\": \"C\",\n                    \"platform_labels\": [\"ILMN_550Qv1_CUSTOMv2\", \"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n                },\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 2,\n                    \"end\": 3,\n                    \"allele\": \"T\",\n                    \"platform_labels\": [\"ILMN_550Qv1_CUSTOMv2\", \"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n                }\n            ]\n        },\n        {\n            \"id\": \"i4001110\",\n            \"alternate_ids\": [],\n            \"gene_names\": [],\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 6,\n            \"end\": 7,\n            \"variants\": [\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 6,\n                    \"end\": 7,\n                    \"allele\": \"A\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n                },\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 6,\n                    \"end\": 7,\n                    \"allele\": \"G\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n                }\n            ]\n        },\n        {\n            \"id\": \"i4001358\",\n            \"alternate_ids\": [],\n            \"gene_names\": [],\n            \"accession_id\": \"NC_012920.1\",\n            \"start\": 8,\n            \"end\": 9,\n            \"variants\": [\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 8,\n                    \"end\": 9,\n                    \"allele\": \"A\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n                },\n                {\n                    \"accession_id\": \"NC_012920.1\",\n                    \"start\": 8,\n                    \"end\": 9,\n                    \"allele\": \"G\",\n                    \"platform_labels\": [\"ILMN_CUSTOMv4\", \"ILMN_OMNIEXv3_CUSTOMv3\"]\n                }\n            ]\n        },\n        ...\n    ],\n    \"links\": {\n        \"next\": \"https://api.23andme.com/3/marker/?accession_id=NC_012920.1&limit=100&offset=100\"\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "id",
+                "value": "rs10195681,i4001358",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "accession_id",
+                "value": "NC_012920.1",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "gene_name",
+                "value": "ACTN3",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "start",
+                "value": "",
+                "equals": false,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "end",
+                "value": "",
+                "equals": false,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "limit",
+                "value": "1000",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              },
+              {
+                "key": "offset",
+                "value": "0",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "https://api.23andme.com/3/marker/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start&end&limit=1000&offset=0"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "ba79c65e-43a7-45ef-b578-1aeedb621269",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "ccb0e710-f464-47c0-8dc9-968b8f9d034b",
+      "name": "Get Reports",
+      "url": "{{23andme_base_url}}/3/report/",
+      "description": "Gets a list of all reports available through the API. Each report object includes reference data describing the profile-level attributes in the corresponding profile report. See here for which reports are currently available.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "716e5c46-0213-45fb-9470-2e56a58bb0eb",
+          "name": "Get Report",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"data\": [\n        {\n            \"report_id\": \"wellness.alcohol_flush\",\n            \"report_type\": \"wellness\",\n            \"title\": \"Alcohol Flush Reaction\",\n            \"details\": {\n                ...\n            },\n            \"summary\": {\n                ...\n                \"assessment\": {\n                    \"type\": \"object\",\n                    \"required\": true,\n                    \"enum\": [\n                        {\n                            \"id\": \"little_flushing\",\n                            \"message\": \"Unlikely to flush after drinking alcohol\"\n                        },\n                        {\n                            \"id\": \"some_flushing_het\",\n                            \"message\": \"Likely to flush after drinking alcohol\"\n                        },\n                        {\n                            \"id\": \"some_flushing\",\n                            \"message\": \"Likely to flush after drinking alcohol\"\n                        },\n                        {\n                            \"id\": \"not_determined\",\n                            \"message\": \"Variant not determined\"\n                        }\n                    ]\n                }\n            }\n        },\n        {\n            \"report_id\": \"wellness.caffeine_consumption\",\n            ...\n        },\n        ...\n    ],\n    \"links\": {\n        \"next\": null\n    }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/report/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "ccb0e710-f464-47c0-8dc9-968b8f9d034b",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    },
+    {
+      "id": "fa08b735-093d-454f-b9c9-e298443281c9",
+      "name": "Get Accession",
+      "url": "{{23andme_base_url}}/3/accession/:accession_id/",
+      "description": "Returns a single accession.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [
+        {
+          "key": "accession_id",
+          "value": "NC_000001.10"
+        }
+      ],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "546236ef-a926-4b4e-9d97-a0d814f5b9f7",
+          "name": "Get Accession",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n    \"id\": \"NC_000001.10\",\n    \"chromosome\": \"1\",\n    \"length\": 249250621\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [
+              {
+                "key": "accession_id",
+                "value": "NC_000001.10"
+              }
+            ],
+            "queryParams": [],
+            "url": "https://api.23andme.com/3/accession/:accession_id/"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "fa08b735-093d-454f-b9c9-e298443281c9",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": {
+        "accession_id": "NC_000001.10"
+      }
+    },
+    {
+      "id": "fe4837e3-a5ce-43aa-a91b-96ceae5300a6",
+      "name": "Get Genetic Phenotype Range Interaction (GPRI)",
+      "url": "{{23andme_base_url}}/3/genetic_phenotype_range_interaction/?predictor_id=linear_regression.gbmi.european_genetics_only_bmi_predictor",
+      "description": "For the supplied predictor_id, lists all GPRI objects associated with the given predictor.",
+      "data": null,
+      "dataOptions": null,
+      "dataMode": null,
+      "headerData": null,
+      "method": "GET",
+      "pathVariableData": [],
+      "queryParams": [
+        {
+          "key": "predictor_id",
+          "value": "linear_regression.gbmi.european_genetics_only_bmi_predictor",
+          "equals": true,
+          "description": "",
+          "enabled": true
+        }
+      ],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "responses": [
+        {
+          "id": "0d5a6e06-26f0-437a-9fdb-98e0c551fc22",
+          "name": "Get Genetic Phenotype Range Interaction (GPRI)",
+          "status": null,
+          "mime": null,
+          "language": null,
+          "text": "{\n  \"data\": [\n    {\n      \"id\": \"bmi_by_fast_food_frequency_and_gbmi\",\n      \"name\": \"Avoiding fast food\",\n      \"predictor_id\": \"linear_regression.gbmi.european_genetics_only_bmi_predictor\",\n      \"variable_phenotype_id\": \"phenotypic_concept.fast_food_frequency\",\n      \"observed_phenotype_id\": \"composed_phenotype.bmi_combined\",\n      \"bins\": {\n        \"1\": {\n          \"maximum_difference_value\": \"11.3\",\n          \"maximum_difference_explanation\": \"People who never ate fast food weighed up to 11.3% less than those who ate fast food almost every day or more. \"\n        },\n        \"2\": {\n          \"maximum_difference_value\": \"11.7\",\n          \"maximum_difference_explanation\": \"People who never ate fast food weighed up to 11.7% less than those who ate fast food almost every day or more. \"\n        },\n        ...\n      ]\n    },\n    {\n      \"id\": \"bmi_by_daily_fruit_servings_and_gbmi\",\n      \"name\": \"Eating fruit\",\n      \"predictor_id\": \"linear_regression.gbmi.european_genetics_only_bmi_predictor\",\n      \"variable_phenotype_id\": \"phenotypic_concept.daily_fruit_servings\",\n      \"observed_phenotype_id\": \"composed_phenotype.bmi_combined\",\n      \"bins\": {\n        \"1\": {\n          \"maximum_difference_value\": \"5.5\",\n          \"maximum_difference_explanation\": \"People who ate at least 5 servings of fruit (not including fruit juice) per day weighed up to 5.5% less than those who never ate fruit.\"\n        },\n        \"2\": {\n          \"maximum_difference_value\": \"5.7\",\n          \"maximum_difference_explanation\": \"People who ate at least 5 servings of fruit (not including fruit juice) per day weighed up to 5.7% less than those who never ate fruit.\"\n        },\n        ...\n      ]\n    }\n  ],\n  \"links\": {\n    \"next\": null\n  }\n}",
+          "responseCode": null,
+          "requestObject": {
+            "data": null,
+            "dataMode": null,
+            "dataOptions": null,
+            "headerData": null,
+            "method": "GET",
+            "pathVariableData": [],
+            "queryParams": [
+              {
+                "key": "predictor_id",
+                "value": "linear_regression.gbmi.european_genetics_only_bmi_predictor",
+                "equals": true,
+                "description": "",
+                "enabled": true
+              }
+            ],
+            "url": "https://api.23andme.com/3/genetic_phenotype_range_interaction/?predictor_id=linear_regression.gbmi.european_genetics_only_bmi_predictor"
+          },
+          "headers": null,
+          "cookies": null,
+          "request": "fe4837e3-a5ce-43aa-a91b-96ceae5300a6",
+          "collection": "3a45340d-6851-4031-9eae-00cb84eac7fe"
+        }
+      ],
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "3a45340d-6851-4031-9eae-00cb84eac7fe",
+      "pathVariables": []
+    }
+  ]
 }
