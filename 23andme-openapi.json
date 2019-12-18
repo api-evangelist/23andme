@@ -3,13 +3,380 @@
     "info": {
         "version": "",
         "title": "23andMe",
-        "description": "",
+        "description": "We are a mission-driven company with big dreams of using data to revolutionize health, wellness and research. We want to improve healthcare. We want to prevent disease. We want to give individuals control over their health data. We want to dramatically accelerate the pace of research. We want to develop better drugs smarter and faster. There is no comfort zone. We do not shy away from controversy, and we never give up. We are pioneering a new world, centered on the consumer, where success depends on bold ideas and unprecedented scale. Big is key, and thinking big drives us.\n\nURL: [API Reference](https:\/\/api.23andme.com\/docs\/reference\/#profile)",
         "termsOfService": ""
     },
-    "servers": [
-        "https"
-    ],
-    "paths": [],
+    "servers": [],
+    "paths": {
+        "\/3\/profile\/:demo_profile_id\/report\/:report_id\/": {
+            "GET": {
+                "summary": "Get Profile Report",
+                "description": "For the user's profile, gets the requested profile report and its results. See here for which profile reports are currently available.",
+                "operationId": "GetProfileReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "demo_profile_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "report_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/accession\/?chromosome={{chromosome}}": {
+            "GET": {
+                "summary": "Get Accessions",
+                "description": "Returns a list of accessions available on 23andMe platforms.",
+                "operationId": "GetAccessions",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "chromosome",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/profile\/:demo_profile_id\/report\/": {
+            "GET": {
+                "summary": "Get Profile Reports",
+                "description": "For the user's profile, gets a list of all profile reports available through the API and their results. See here for which profile reports are currently available.",
+                "operationId": "GetProfileReports",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "demo_profile_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/profile\/?account_id={{account_id}}": {
+            "GET": {
+                "summary": "Get Profiles",
+                "description": "Returns a list of active profiles owned by the account. The account_id must be provided.",
+                "operationId": "GetProfiles",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "account_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/profile\/:demo_profile_id\/": {
+            "GET": {
+                "summary": "Get Profile",
+                "description": "Returns a single profile for the given profile_id.",
+                "operationId": "GetProfile",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "demo_profile_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/report\/:report_id\/": {
+            "GET": {
+                "summary": "Get Report",
+                "description": "Gets the requested report, which includes reference data describing the profile-level attributes in the corresponding profile report. See here for which reports are currently available.",
+                "operationId": "GetReport",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "report_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/profile\/demo_profile_id\/variant\/?accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0": {
+            "GET": {
+                "summary": "Get Variant",
+                "description": "For the user's profile, gets a list of profile variants ordered by their start and end positions.",
+                "operationId": "GetVariant",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accession_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "gene_name",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "chromosome_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "platform_label",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/marker\/:marker_id\/": {
+            "GET": {
+                "summary": "Get Marker",
+                "description": "Returns a single marker.",
+                "operationId": "GetMarker",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "marker_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/account\/": {
+            "GET": {
+                "summary": "Get Account",
+                "description": "Returns a list containing the user account associated with the token.",
+                "operationId": "GetAccount",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/3\/profile\/demo_profile_id\/marker\/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0": {
+            "GET": {
+                "summary": "Get Profile Markers",
+                "description": "For a user's profile, gets a list of profile markers ordered by their start and end positions.",
+                "operationId": "GetProfileMarkers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "accession_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "gene_name",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/profile\/demo_profile_id\/marker\/:marker_id\/": {
+            "GET": {
+                "summary": "Get Profile Marker",
+                "description": "For a user's profile, returns a single profile marker.",
+                "operationId": "GetProfileMarker",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "marker_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/variant\/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&chromosome_id= MT&start=0&end=0&platform_label= ILMN_550&limit=1000&offset=0": {
+            "GET": {
+                "summary": "Get Variants",
+                "description": "Gets a list of variants ordered by their start and end positions. Must use exactly one of accession_id, chromosome_id or gene_name. Optionally, start and end may only be used with accession_id or chromosome_id.\n\nThe gene_name parameter will return a list of variants for that gene.",
+                "operationId": "GetVariants",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "accession_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "gene_name",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "chromosome_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "platform_label",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/marker\/?id=rs10195681,i4001358&accession_id=NC_012920.1&gene_name=ACTN3&start=0&end=0&limit=1000&offset=0": {
+            "GET": {
+                "summary": "Get Markers",
+                "description": "Gets a list of genetic markers ordered by their start and end positions. Must use one of either id or gene_name or accession_id. Optionally, start and end parameters may only be used with accession_id.\n\nThe id parameter will return a list of markers that match those ids. It must be a string of comma-sparated values (no more than 10000).",
+                "operationId": "GetMarkers",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "accession_id",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "gene_name",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "start",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "end",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "limit",
+                        "in": "path",
+                        "description": ""
+                    },
+                    {
+                        "name": "offset",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/report\/": {
+            "GET": {
+                "summary": "Get Reports",
+                "description": "Gets a list of all reports available through the API. Each report object includes reference data describing the profile-level attributes in the corresponding profile report. See here for which reports are currently available.",
+                "operationId": "GetReports",
+                "deprecated": 0,
+                "parameters": []
+            }
+        },
+        "\/3\/accession\/:accession_id\/": {
+            "GET": {
+                "summary": "Get Accession",
+                "description": "Returns a single accession.",
+                "operationId": "GetAccession",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "accession_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        },
+        "\/3\/genetic_phenotype_range_interaction\/?predictor_id=linear_regression.gbmi.european_genetics_only_bmi_predictor": {
+            "GET": {
+                "summary": "Get Genetic Phenotype Range Interaction (GPRI)",
+                "description": "For the supplied predictor_id, lists all GPRI objects associated with the given predictor.",
+                "operationId": "GetGeneticPhenotypeRangeInteraction(gpri)",
+                "deprecated": 0,
+                "parameters": [
+                    {
+                        "name": "predictor_id",
+                        "in": "path",
+                        "description": ""
+                    }
+                ]
+            }
+        }
+    },
     "components": {
         "schemas": []
     }
