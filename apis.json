@@ -11,11 +11,12 @@
         "have api",
         "medical",
         "no api definition",
+        "postman collections",
         "profile",
         "shopping"
     ],
-    "created": "2019-12-12",
-    "modified": "2019-12-12",
+    "created": "2019-12-17",
+    "modified": "2019-12-17",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/23andme\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
