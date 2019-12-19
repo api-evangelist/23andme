@@ -15,8 +15,8 @@
         "profile",
         "shopping"
     ],
-    "created": "2019-12-17",
-    "modified": "2019-12-17",
+    "created": "2019-12-18",
+    "modified": "2019-12-18",
     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/23andme\/master\/apis.json",
     "specificationVersion": "0.14",
     "apis": [
@@ -31,6 +31,10 @@
                 {
                     "type": "x-openapi",
                     "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/23andme-openapi.json"
+                },
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/23andme-postman-collection.json"
                 },
                 {
                     "type": "x-postman-collecction",
