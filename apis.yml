@@ -1,8 +1,28 @@
 aid: 23andme
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/23andme.png
 name: 23andMe
-description: '23andMe is a company surfaced as a portfolio company of altimeter-capital, gv, sapphire-ventures
-  and added to the API Evangelist network as a stub for enrichment. Sector: healthtech. This profile is
-  a lead awaiting the enrichment pipeline.'
+description: >-
+  23andMe is a consumer genetics and biotechnology company founded in 2006 that sells
+  saliva-based DNA test kits and returns ancestry composition, DNA relative matching,
+  genetic health-predisposition and carrier-status reports, wellness and trait insights,
+  and pharmacogenetic results directly to consumers, alongside a research arm that studies
+  aggregated, consented genetic data. 23andMe historically published a scope-gated,
+  OAuth 2.0 Personal Genome API at api.23andme.com, but closed third-party developer API
+  access in September 2018; the company entered Chapter 11 bankruptcy in 2025 and its
+  consumer web presence and assets have since shifted to the 23andme.org domain. No public,
+  live developer API surface remains, though the company maintains a trust center and a
+  security disclosure program.
 url: https://raw.githubusercontent.com/api-evangelist/23andme/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,12 +32,19 @@ x-backed-by:
 - sapphire-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-api-status: closed-2018
 specificationVersion: '0.20'
 created: '2026-07-17'
 modified: '2026-07-17'
 tags:
 - Company
 - Healthtech
+- Genetics
+- Genomics
+- DNA Testing
+- Ancestry
+- Consumer Health
+- Bioinformatics
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -27,3 +54,28 @@ maintainers:
 common:
 - type: Website
   url: https://www.23andme.com
+- type: GitHubOrganization
+  url: https://github.com/23andMe
+- type: Blog
+  url: https://blog.23andme.com
+- type: Support
+  url: https://customercare.23andme.com/hc/en-us
+- type: PrivacyPolicy
+  url: https://www.23andme.com/legal/privacy/
+- type: TermsOfService
+  url: https://www.23andme.com/legal/terms-of-service/
+- type: TrustCenter
+  url: security/23andme-trust-center.yml
+- type: Compliance
+  url: https://trust.23andme.com/
+- type: VulnerabilityDisclosure
+  url: security/23andme-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.23andme.org/security/
+- type: DomainSecurity
+  url: security/23andme-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

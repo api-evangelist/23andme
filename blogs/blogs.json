@@ -1,0 +1,14 @@
+{
+  "repo": "23andme",
+  "feeds": [
+    {
+      "source": "https://github.com/23andMe",
+      "feed_url": "https://github.com/23andMe",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    }
+  ],
+  "post_count": 0,
+  "fetched": "2026-07-20T13:31:34Z"
+}
