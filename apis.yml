@@ -1,28 +1,33 @@
 aid: 23andme
 accessModel:
-  pricing: unknown
-  onboarding: unknown
+  pricing: paid
+  onboarding: contact-sales
   trial: false
   try_now: false
   public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  label: Partner Only
+  confidence: medium
+  source:
+  - https://www.23andme.org/partners/marketplace/
+  - https://api.23andme.com/dev/
+  generated: '2026-08-15'
+  method: searched
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/23andme.png
 name: 23andMe
 description: >-
-  23andMe is a consumer genetics and biotechnology company founded in 2006 that sells
-  saliva-based DNA test kits and returns ancestry composition, DNA relative matching,
-  genetic health-predisposition and carrier-status reports, wellness and trait insights,
-  and pharmacogenetic results directly to consumers, alongside a research arm that studies
-  aggregated, consented genetic data. 23andMe historically published a scope-gated,
-  OAuth 2.0 Personal Genome API at api.23andme.com, but closed third-party developer API
-  access in September 2018; the company entered Chapter 11 bankruptcy in 2025 and its
-  consumer web presence and assets have since shifted to the 23andme.org domain. No public,
-  live developer API surface remains, though the company maintains a trust center and a
-  security disclosure program.
+  23andMe is a consumer genetics company founded in 2006 that sells saliva-based DNA test
+  kits and returns ancestry composition across 4,500+ regions, DNA relative matching,
+  FDA-cleared genetic health predisposition and carrier-status reports, pharmacogenetics,
+  polygenic risk scores, wellness and trait insights, plus a Total Health tier adding exome
+  sequencing, biannual blood testing and genetics-informed telehealth. It is now operated by
+  the 23andMe Research Institute, a non-profit, following the company's 2025 Chapter 11
+  bankruptcy; the canonical consumer domain migrated from 23andme.com to 23andme.org, which
+  serves the company's llms.txt, trust center and shop. 23andMe published a scope-gated
+  OAuth 2.0 Personal Genome API at api.23andme.com but closed general third-party developer
+  access in September 2018. It still markets API and raw-data integration through the
+  23andMe Marketplace as a partner arrangement, though no machine-readable contract, API
+  reference, pricing or rate limits are published publicly, and the developer portal host
+  answers a Cloudflare bot challenge to anonymous requests.
 url: https://raw.githubusercontent.com/api-evangelist/23andme/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -32,10 +37,10 @@ x-backed-by:
 - sapphire-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
-x-api-status: closed-2018
+x-api-status: partner-only-since-2018
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-08-15'
 tags:
 - Company
 - Healthtech
@@ -45,6 +50,10 @@ tags:
 - Ancestry
 - Consumer Health
 - Bioinformatics
+- Precision Medicine
+- Pharmacogenomics
+- Telehealth
+- Health Research
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -53,29 +62,97 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.23andme.com
+  url: https://www.23andme.org/
 - type: GitHubOrganization
   url: https://github.com/23andMe
 - type: Blog
-  url: https://blog.23andme.com
+  url: https://www.23andme.org/blog/
 - type: Support
   url: https://customercare.23andme.com/hc/en-us
+- type: Pricing
+  url: https://www.23andme.org/shop/compare-dna-tests/
 - type: PrivacyPolicy
-  url: https://www.23andme.com/legal/privacy/
+  url: https://www.23andme.org/legal/privacy/
 - type: TermsOfService
-  url: https://www.23andme.com/legal/terms-of-service/
+  url: https://www.23andme.org/legal/terms-of-service/
 - type: TrustCenter
   url: security/23andme-trust-center.yml
 - type: Compliance
-  url: https://trust.23andme.com/
+  url: https://www.23andme.org/trust-center/
 - type: VulnerabilityDisclosure
   url: security/23andme-vulnerability-disclosure.yml
 - type: Security
-  url: https://www.23andme.org/security/
+  url: https://hackerone.com/23andme_bbp?type=team
 - type: DomainSecurity
   url: security/23andme-domain-security.yml
+- type: Conformance
+  url: conformance/23andme-conformance.yml
+- type: Lifecycle
+  url: lifecycle/23andme-lifecycle.yml
+- type: LLMsTxt
+  url: llms/23andme-llms.txt
+- type: Packages
+  url: packages/23andme-packages.yml
+- type: Plans
+  url: plans/23andme-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/23andme-rate-limits.yml
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-15'
+  status: enriched
+  artifacts_added: 8
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: covered
+  reason: null
+  detail: >-
+    Contract discovery completed against every 23andMe host and found no machine-readable
+    API: the consumer surface migrated to www.23andme.org, whose 642-URL sitemap contains
+    no developer page, and the legacy Personal Genome API host api.23andme.com answers a
+    Cloudflare managed challenge on every path. What 23andMe does serve from its own hosts,
+    and what was captured verbatim here, is an llms.txt, a live Marketplace developer page
+    that gates API access behind marketplace@23andme.com, a nine-certification trust center,
+    and a HackerOne bug bounty.
+  evidence:
+  - url: https://www.23andme.org/llms.txt
+    status: 200
+  - url: https://www.23andme.org/partners/marketplace/
+    status: 200
+  - url: https://api.23andme.com/dev/
+    status: 403
+  - url: https://api.23andme.com/openapi.json
+    status: 403
+  - url: https://www.23andme.org/.well-known/agent-card.json
+    status: 404
+  checked: '2026-08-15'
+x-pointers-withheld:
+  note: >-
+    Pointers deliberately NOT emitted, so a later pass does not read their absence as an
+    oversight. Each was probed and missed.
+  withheld:
+  - type: WellKnown
+    reason: Every /.well-known/ path on every host returned 404. See well-known/23andme-well-known.yml.
+  - type: SecurityTxt
+    reason: No RFC 9116 security.txt is served on any 23andMe host.
+  - type: AgentCard
+    reason: >-
+      No agent card at /.well-known/agent-card.json or /.well-known/agent.json on any host
+      (all 404). Never generated or derived.
+  - type: MCPServer
+    reason: No first-party MCP server, remote or stdio. See mcp/23andme-mcp.yml.
+  - type: SDKs
+    reason: >-
+      No first-party API client library exists in any registry. The three official
+      packages found (styledot, styledot-docs, yamale) are a design system and a YAML
+      validator, not API clients.
+  - type: StatusPage
+    reason: status.23andme.com and status.23andme.org are both NXDOMAIN.
+  - type: Deprecation
+    reason: No deprecation or sunset policy is published.
+  - type: DeveloperPortal
+    reason: >-
+      https://api.23andme.com/dev/ is linked from the live Marketplace page but returns a
+      Cloudflare managed challenge (403) to anonymous requests, so no portal could be
+      confirmed to render.
+  - type: Postman
+    reason: Postman public search for "23andme" returns zero collections, APIs or workspaces.
