@@ -1,0 +1,93 @@
+generated: '2026-08-15'
+method: searched
+source: https://www.23andme.org/trust-center/
+additional_sources:
+- https://www.23andme.org/security/
+- https://www.23andme.org/llms.txt
+note: >-
+  This file records the REGULATORY and INFORMATION-SECURITY standards 23andMe publishes
+  a compliance claim against. It records no API-protocol conformance (OAuth2/OIDC,
+  RFC 9457, FHIR, pagination, idempotency), because 23andMe publishes no machine-readable
+  API contract from which any protocol claim could be derived or verified.
+standards:
+- id: iso-iec-27001
+  conforms: true
+  evidence: >-
+    Trust Center: "Our security program is certified under the global ISO/IEC 27001,
+    27701, and 27018 standards"; the ISMS is "audited by an accredited third party on
+    an annual basis."
+  source: https://www.23andme.org/trust-center/
+- id: iso-iec-27701
+  conforms: true
+  evidence: >-
+    Privacy Information Management System (PIMS) declared ISO/IEC 27701 compliant and
+    annually third-party audited.
+  source: https://www.23andme.org/security/
+- id: iso-iec-27018
+  conforms: true
+  evidence: >-
+    Listed among the three ISO/IEC standards the security program is certified under
+    (code of practice for protecting PII in the public cloud).
+  source: https://www.23andme.org/trust-center/
+- id: hipaa
+  conforms: true
+  evidence: '"HIPAA Compliance" listed under Compliance — Certifications, Regulations and Standards.'
+  source: https://www.23andme.org/trust-center/
+- id: gdpr
+  conforms: true
+  evidence: '"General Data Protection Regulation" listed under Compliance.'
+  source: https://www.23andme.org/trust-center/
+- id: gina
+  conforms: true
+  evidence: '"Genetic Information Nondiscrimination Act" listed under Compliance.'
+  source: https://www.23andme.org/trust-center/
+- id: us-state-privacy-and-health-privacy-laws
+  conforms: true
+  evidence: '"State Consumer Privacy & Health Privacy Laws (U.S.)" listed under Compliance.'
+  source: https://www.23andme.org/trust-center/
+- id: common-rule
+  conforms: true
+  evidence: >-
+    "Common Rule" (45 CFR 46, US federal policy for protection of human research
+    subjects) listed under Compliance — relevant to the 23andMe Research Program.
+  source: https://www.23andme.org/trust-center/
+- id: fda-authorization
+  conforms: true
+  evidence: >-
+    "FDA Authorization" listed under Compliance. llms.txt states 23andMe is the "first
+    and only direct-to-consumer DNA testing service with multiple FDA-cleared genetic
+    health reports."
+  source: https://www.23andme.org/trust-center/
+- id: clia
+  conforms: true
+  evidence: >-
+    llms.txt: saliva genotyping and exome sequencing "are performed in CLIA-certified
+    U.S. laboratories."
+  source: https://www.23andme.org/llms.txt
+- id: cap
+  conforms: true
+  evidence: 'llms.txt: "Total Health exome processing is CLIA- and CAP-accredited."'
+  source: https://www.23andme.org/llms.txt
+- id: pci-dss
+  conforms: unknown
+  evidence: >-
+    A prior pass recorded PCI DSS from the legacy trust portal at trust.23andme.com.
+    That host now 301s to trust.23andme.org, which answers a Cloudflare challenge (403).
+    The current first-party Trust Center at www.23andme.org/trust-center/ does NOT list
+    PCI DSS among its nine named certifications, so the claim could not be re-verified
+    on 2026-08-15 and is recorded as unknown rather than carried forward as true.
+  source: https://www.23andme.org/trust-center/
+- id: oauth2
+  conforms: unknown
+  evidence: >-
+    The retired Personal Genome API was an OAuth 2.0 API, but its documentation
+    (api.23andme.com/docs/) is behind a Cloudflare challenge and no securityScheme
+    declaration is publicly readable. Not asserted.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No public API contract exists to derive an error format from.
+- id: fhir
+  conforms: false
+  evidence: >-
+    No FHIR resource, endpoint or conformance statement is published anywhere on
+    23andme.org, despite the health-data domain.

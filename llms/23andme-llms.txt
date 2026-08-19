@@ -1,0 +1,57 @@
+# 23andMe
+
+> 23andMe (https://www.23andme.org/) is a personal genetics company operated by the 23andMe Research Institute (a non-profit organization). The platform analyzes saliva samples in CLIA-certified and CAP-accredited U.S. laboratories to deliver personalized insights across health, carrier status, pharmacogenetics, physical traits, and detailed ancestral origins.
+
+## Key Brand & Operational Facts
+- Operating Entity: 23andMe Research Institute (non-profit organization).
+- Canonical Domain: https://www.23andme.org (migrated from 23andMe.com).
+- Scale & Track Record: Utilized by over 14 million customers worldwide. First and only direct-to-consumer DNA testing service with multiple FDA-cleared genetic health reports.
+- Laboratory Standards: Saliva genotyping and exome sequencing are performed in CLIA-certified U.S. laboratories; Total Health exome processing is CLIA- and CAP-accredited; blood panel testing is conducted via Quest Diagnostics.
+- Testing Methodology: Saliva-based DNA microarrays for genotyping; target exome sequencing is utilized exclusively within the 23andMe+ Total Health membership.
+- Medical Disclaimer: Health, trait, and pharmacogenetic reports are for informational and educational purposes only. They are not diagnostic and do not replace professional medical advice. Clinical confirmation is recommended before making treatment decisions.
+- Data Ownership & Privacy: Customers retain explicit control over their genetic data, with granular options regarding research participation and account deletion.
+
+## Products & Services
+- [Ancestry + Traits Service ($99)](https://www.23andme.org/shop/dna-ancestry/): Comprehensive geographic ancestral composition across 4,500+ regions, maternal and paternal haplogroups, Neanderthal DNA percentage, family tree construction, and DNA Relatives Finder.
+- [23andMe+ Premium ($199, renews $69/yr)](https://www.23andme.org/shop/premium-ancestry-health/): Includes all Ancestry + Traits features plus 100+ health insights, FDA-cleared genetic health screening for 50+ conditions, pharmacogenetics, polygenic risk scores, and ongoing report updates. FSA/HSA eligible.
+- [23andMe+ Total Health ($499, renews $199/yr)](https://www.23andme.org/shop/total-health/): Advanced preventive health membership featuring exome sequencing, biannual clinical blood testing, and genetics-informed telehealth care with licensed clinicians. FSA/HSA eligible.
+- [Compare DNA Tests](https://www.23andme.org/shop/compare-dna-tests/): Feature matrix comparing Ancestry, Premium, and Total Health services.
+- [GLP-1 & Weight Management Program](https://www.23andme.org/shop/total-health/wl-mrr/): Genetics-informed clinical weight management integrated within the Total Health ecosystem.
+- [Gift 23andMe](https://www.23andme.org/shop/gifts/): DNA test kit gifting options and delivery packages.
+- [FSA & HSA Eligibility Guide](https://www.23andme.org/shop/fsa-hsa/): Overview of tax-advantaged health account qualification for tests and subscriptions.
+
+## How It Works & Science
+- [How It Works](https://www.23andme.org/shop/how-it-works/): Step-by-step overview of the testing process, from kit registration to saliva collection and report processing.
+- [Genetic Science & Methodology](https://www.23andme.org/shop/genetic-science/): Detailed explanation of genotyping technology, custom Illumina chips, and statistical algorithms.
+- [Important Test Information & Limits](https://www.23andme.org/shop/test-info/): Regulatory compliance details, FDA clearance scope, and analytical limitations for health and carrier reports.
+- [Pharmacogenetics Information](https://www.23andme.org/shop/test-info/pharmacogenetics/): Scientific disclosures regarding metabolism rate predictions for specific medications.
+- [Register Your Kit](https://www.23andme.org/start/): Portal for registering physical kit barcodes before sending samples to the lab.
+
+## Education & Research
+- [Genetics Learning Hub](https://www.23andme.org/education): Educational modules, interactive tools, and guides explaining genetics, heritage, and polygenic traits.
+- [23andMe Research Program](https://www.23andme.org/research/): Overview of crowdsourced genomic research contributing to scientific publications and target discovery.
+- [Scientific Publications](https://www.23andme.org/research/publications/): Peer-reviewed studies published by 23andMe scientists in journals such as Nature, Science, and Nature Genetics.
+- [Research Study Participation](https://www.23andme.org/research/participation/): Information for customers on opting into genomic research studies.
+
+## Company & Governance
+- [About Us](https://www.23andme.org/about/): Corporate history, mission, and personal genetics innovation timeline.
+- [Governance & Leadership](https://www.23andme.org/about/governance/): Executive leadership team and organizational oversight for the 23andMe Research Institute.
+- [Media Center](https://www.23andme.org/media-center/): Official press releases, media assets, and corporate announcements.
+- [Careers](https://www.23andme.org/careers/): Career opportunities across research, technology, and operations.
+- [Customer Stories](https://www.23andme.org/shop/stories/): Customer case studies regarding health findings and ancestral connections.
+
+## Privacy & Trust
+- [Trust Center & Data Security](https://www.23andme.org/trust-center/): Architectural security standards, encryption practices, and customer data rights.
+- [Privacy Statement](https://www.23andme.org/legal/privacy/): Comprehensive legal policy governing data handling and user rights.
+- [Terms of Service](https://www.23andme.org/legal/terms-of-service/): Universal agreement governing account usage and store purchases.
+- [Telehealth Terms of Service](https://www.23andme.org/legal/telehealth-tos/): Specific terms covering Total Health clinical consultations.
+- [Consent to Telehealth](https://www.23andme.org/legal/telehealth-consent/): Patient consent documentation for virtual care services.
+
+## Strategic Partners & Developers
+- [Clinician Resources](https://www.23andme.org/clinicians/): Information for healthcare providers interpreting 23andMe customer reports.
+- [Business Development](https://www.23andme.org/partners/): Enterprise solutions and institutional partnership opportunities.
+
+## Additional Resources
+- [Official Blog](https://www.23andme.org/blog/): News, educational articles, and product releases.
+- [Customer Help Center](https://customercare.23andme.com/hc/en-us/): Customer support articles, troubleshooting, and order assistance.
+- [HTML Sitemap](https://www.23andme.org/sitemap/): Full public page navigation index.

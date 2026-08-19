@@ -1,0 +1,143 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  npm registry (registry.npmjs.org), PyPI (pypi.org/pypi/<name>/json), and the
+  github.com/23andMe organization repository listing via api.github.com
+note: >-
+  23andMe publishes NO first-party API client SDK. The Personal Genome API it once
+  wrapped was closed to general third-party developers in September 2018, and no
+  replacement client library has been published to any registry since. No `SDKs`
+  pointer is emitted in apis.yml for this reason — the packages below are real,
+  first-party, currently-maintained open-source libraries, but none of them is a
+  client for a 23andMe API, so crediting them as SDKs would assert an API client
+  surface that does not exist.
+sdk_count: 0
+official_package_count: 3
+packages:
+- language: javascript
+  registry: npm
+  name: styledot
+  url: https://www.npmjs.com/package/styledot
+  install: npm install styledot
+  official: true
+  api_client: false
+  kind: design-system
+  version: 3.15.0
+  published: '2026-05-06'
+  repository: https://github.com/23andme-private/style
+  note: >-
+    23andMe Design System. First-party — the npm maintainer list includes the
+    `23andme` org account alongside named 23andMe engineers. The backing repository
+    (23andme-private/style) is private, so the component surface is not publicly
+    documented; this is an internal design system published to npm, not a public
+    embeddable component library, and no Components artifact is emitted for it.
+- language: javascript
+  registry: npm
+  name: styledot-docs
+  url: https://www.npmjs.com/package/styledot-docs
+  install: npm install styledot-docs
+  official: true
+  api_client: false
+  kind: design-system-docs
+  version: 1.0.7
+  published: '2021-12-03'
+  repository: https://github.com/23andme-private/style
+  note: >-
+    23andMe styleguide docs. Sole npm maintainer is the `23andme` org account.
+    Last published 2021-12-03 — nearly five years stale against styledot 3.15.0
+    (2026-05-06), so the published docs no longer track the design system itself.
+- language: python
+  registry: pypi
+  name: yamale
+  url: https://pypi.org/project/yamale/
+  install: pip install yamale
+  official: true
+  api_client: false
+  kind: developer-tool
+  version: 6.1.0
+  published: '2025-11-20'
+  repository: https://github.com/23andMe/Yamale
+  note: >-
+    A schema and validator for YAML. 23andMe's most widely adopted open-source
+    project (771 stars) and the org's most recently active repository (pushed
+    2026-08-13). General-purpose tooling — unrelated to any 23andMe API.
+unmaintained_first_party:
+- language: python
+  registry: pypi
+  name: seqseek
+  url: https://pypi.org/project/seqseek/
+  official: true
+  api_client: false
+  kind: bioinformatics-library
+  version: 0.4.2
+  published: '2021-10-01'
+  author: 23andMe Engineering
+  repository: https://github.com/23andMe/seqseek
+  note: Human reference genome sequence access. No release in ~5 years.
+- language: python
+  registry: pypi
+  name: stranding
+  url: https://pypi.org/project/stranding/
+  official: true
+  api_client: false
+  kind: bioinformatics-library
+  version: 0.2.0
+  published: '2021-09-30'
+  author: 23andMe Engineering
+  repository: https://github.com/23andMe/stranding
+  note: Genome stranding determination. No release in ~5 years.
+not_on_a_registry:
+- name: yhaplo
+  repository: https://github.com/23andMe/yhaplo
+  registry: null
+  version: null
+  published: null
+  official: true
+  api_client: false
+  note: >-
+    Y-chromosome haplogroup identification (128 stars, pushed 2026-07-30). Actively
+    maintained on GitHub but absent from PyPI — pypi.org/pypi/yhaplo/json returns
+    404, so there is no registry metadata to read a version or release date from.
+- name: phasedibd
+  repository: https://github.com/23andMe/phasedibd
+  registry: null
+  version: null
+  published: null
+  official: true
+  api_client: false
+  note: >-
+    Identity-by-descent inference (47 stars, pushed 2026-02-23). Absent from PyPI;
+    installed from source only, so consumers cannot pin a published version.
+- name: bonsaitree
+  repository: https://github.com/23andMe/bonsaitree
+  registry: null
+  version: null
+  published: null
+  official: true
+  api_client: false
+  note: Pedigree reconstruction. Absent from PyPI; no release since 2024-10-18.
+third_party_api_clients:
+- language: javascript
+  registry: npm
+  name: 23andme
+  url: https://www.npmjs.com/package/23andme
+  official: false
+  api_client: true
+  version: 1.1.0
+  published: '2016-04-18'
+  maintainer: lukehorvat
+  note: >-
+    Community JavaScript wrapper for the Personal Genome API. Abandoned — last
+    published 2016, more than two years before 23andMe closed the API in 2018.
+- language: javascript
+  registry: npm
+  name: passport-23andme
+  url: https://www.npmjs.com/package/passport-23andme
+  official: false
+  api_client: true
+  version: 0.1.1
+  published: '2012-10-10'
+  maintainer: mowens
+  note: >-
+    Community Passport.js OAuth strategy for the Personal Genome API. Abandoned
+    since 2012 and non-functional against a closed API.

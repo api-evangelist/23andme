@@ -1,0 +1,44 @@
+generated: '2026-08-15'
+method: searched
+status: none
+source: >-
+  provider surface search (www.23andme.org sitemap, llms.txt, github.com/23andMe org
+  listing) plus a web search for a first-party 23andMe MCP server
+note: >-
+  23andMe ships no MCP server — neither a remote endpoint nor a stdio package — and
+  there is no OpenAPI in this repo from which a candidate tool list could be derived.
+  No MCPServer pointer is emitted in apis.yml: this file records a verified absence,
+  and a pointer would assert an agent surface the provider does not operate. No
+  endpoint URL is guessed.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+server: null
+tools: []
+evidence:
+- url: https://www.23andme.org/llms.txt
+  status: 200
+  finding: >-
+    The provider's own agent-facing site guide lists products, docs and legal pages.
+    It names no MCP server, no tools and no API.
+- url: https://api.github.com/orgs/23andMe/repos
+  status: 200
+  finding: >-
+    All 25 public repositories listed; none is an MCP server. The three api-example-*
+    repos (Flask, Express, Go) are 2013-era demo apps for the retired Personal Genome
+    API, last pushed 2020-2024.
+- url: https://registry.npmjs.org/-/v1/search?text=23andme
+  status: 200
+  finding: >-
+    28 hits, none a first-party MCP server. Third-party packages exist that PARSE
+    exported 23andMe raw-data files locally; they are not clients of a 23andMe service
+    and are not attributable to the company.
+third_party_note: >-
+  Community MCP servers (e.g. gene_mcp) accept a user's exported 23andMe raw DNA file
+  as a local upload alongside AncestryDNA, MyHeritage and VCF exports. They read a file
+  format, not a 23andMe API, and 23andMe neither publishes nor endorses them. They are
+  recorded here only so a later pass does not mistake one for a first-party server.

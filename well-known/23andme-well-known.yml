@@ -1,0 +1,78 @@
+generated: '2026-08-15'
+method: probed
+source: live GET of /.well-known/* on every 23andMe host named in apis.yml, in llms.txt
+  and on the legacy API host
+note: >-
+  Every /.well-known/ path probed returned 404 or a Cloudflare bot challenge. No
+  WellKnown or SecurityTxt pointer is emitted in apis.yml, because none of these
+  paths returned a real document — this file records a verified ABSENCE, not a
+  presence. www.23andme.com issues a 301 to www.23andme.org for every path, so the
+  two hosts share one result set. api.23andme.com sits behind a Cloudflare managed
+  challenge (403, cf-mitigated: challenge) and returns the challenge interstitial
+  rather than a document for the root-level paths, while its /.well-known/* paths
+  return an origin 404.
+hosts:
+- host: https://www.23andme.org
+  canonical: true
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://www.23andme.com
+  canonical: false
+  note: 301 Moved Permanently to https://www.23andme.org for every path probed.
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    redirects_to: https://www.23andme.org/.well-known/security.txt
+    final_status: 404
+- host: https://api.23andme.com
+  canonical: false
+  note: >-
+    Legacy Personal Genome API host. Root-level paths answer with a Cloudflare
+    managed challenge (403); /.well-known/* paths reach the origin and 404.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+related:
+  llms_txt:
+    path: /llms.txt
+    status: 200
+    host: https://www.23andme.org
+    file: ../llms/23andme-llms.txt
+    note: >-
+      Not a /.well-known/ document, but the only machine-addressable discovery file
+      23andMe serves. It is referenced from robots.txt as the "AI site guide".
+  robots_txt:
+    path: /robots.txt
+    status: 200
+    host: https://www.23andme.org
+    note: >-
+      Names AI retrieval agents explicitly (OAI-SearchBot, ChatGPT-User, PerplexityBot,
+      Claude-SearchBot, Claude-User, Google-CloudVertexBot, Gemini-Deep-Research,
+      MistralAI-User, DuckAssistBot) and allows them while disallowing /account/,
+      /dna-data/, /raw-data/, /start/ and /api/. Bulk scrapers (CCBot, Bytespider,
+      SemrushBot, AhrefsBot, Diffbot and others) are disallowed outright.

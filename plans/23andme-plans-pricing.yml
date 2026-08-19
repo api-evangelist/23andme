@@ -1,0 +1,111 @@
+generated: '2026-08-15'
+method: searched
+source: https://www.23andme.org/shop/compare-dna-tests/
+additional_sources:
+- https://www.23andme.org/
+- https://www.23andme.org/shop/total-health/
+- https://www.23andme.org/llms.txt
+note: >-
+  These are CONSUMER product plans, not API plans. 23andMe publishes no API pricing,
+  no metered tier and no developer plan of any kind; access to the Marketplace API is
+  arranged by contacting marketplace@23andme.com. Prices below were read verbatim from
+  the live pricing surfaces on 2026-08-15.
+plan_count: 4
+currency: USD
+billing_model: one-time kit purchase plus optional annual membership renewal
+plans:
+- name: Basic Ancestry
+  price: 99
+  currency: USD
+  billing_period: one-time
+  renewal: null
+  url: https://www.23andme.org/shop/dna-ancestry/
+  includes:
+  - Ancestry composition across 4,500+ regions
+  - Maternal and paternal haplogroups
+  - Neanderthal DNA percentage
+  - Family Tree
+  - DNA Relatives Finder
+- name: Premium Ancestry
+  price: 149
+  currency: USD
+  billing_period: one-time
+  renewal:
+    price: 69
+    currency: USD
+    period: year
+    cancelable_anytime: true
+  url: https://www.23andme.org/shop/compare-dna-tests/
+  includes:
+  - Everything in Basic Ancestry
+  - Reconstructed ancestor genetic profiles
+  - Historical matches
+  - Maternal/paternal inheritance sorting
+  - Distant ancestry groups
+  - Relative clustering and comparison tools
+- name: Premium Ancestry + Health
+  price: 199
+  currency: USD
+  billing_period: one-time
+  renewal:
+    price: 99
+    currency: USD
+    period: year
+    cancelable_anytime: true
+  url: https://www.23andme.org/shop/premium-ancestry-health/
+  fsa_hsa_eligible: true
+  includes:
+  - Everything in Premium Ancestry
+  - 100+ health insights
+  - FDA-cleared genetic health screening
+  - Pharmacogenetics reports
+  - Polygenic risk scores
+  - Advanced DNA relative filters
+  - Health action tools
+  - Ongoing report updates
+- name: Premium Ancestry + Total Health
+  price: 499
+  currency: USD
+  billing_period: one-time
+  renewal:
+    price: 199
+    currency: USD
+    period: year
+  url: https://www.23andme.org/shop/total-health/
+  fsa_hsa_eligible: true
+  availability_note: >-
+    Not available to residents of HI, NJ, NY, RI and US territories.
+  includes:
+  - Everything in Premium Ancestry + Health
+  - Exome sequencing
+  - Biannual clinical blood testing (via Quest Diagnostics)
+  - Genetics-informed telehealth care with licensed clinicians
+  - GLP-1 and weight management program
+api_plans:
+  plan_count: 0
+  note: >-
+    No published API pricing, rate tier, or developer plan. The Marketplace developer
+    page (https://www.23andme.org/partners/marketplace/, HTTP 200) directs prospective
+    API consumers to email marketplace@23andme.com and links the developer portal at
+    https://api.23andme.com/dev/ — which answers a Cloudflare managed challenge (403)
+    to anonymous requests. API access is a partner arrangement, not a purchasable plan.
+x-divergence:
+  finding: >-
+    23andMe's own agent-facing llms.txt disagrees with its human-facing pricing pages.
+  detail: >-
+    https://www.23andme.org/llms.txt (fetched 2026-08-15, HTTP 200) advertises three
+    products under the OLD naming — "Ancestry + Traits Service ($99)", "23andMe+
+    Premium ($199, renews $69/yr)" and "23andMe+ Total Health ($499, renews $199/yr)".
+    The live pricing pages fetched the same day publish FOUR products under NEW naming:
+    Basic Ancestry $99, Premium Ancestry $149 (renews $69/yr), Premium Ancestry + Health
+    $199 (renews $99/yr) and Premium Ancestry + Total Health $499 (renews $199/yr). The
+    $149 tier is missing from llms.txt entirely, and llms.txt attaches the $69/yr renewal
+    to the $199 product when the live page attaches $99/yr to it. An agent trusting
+    llms.txt would quote a price list the company no longer sells.
+  evidence:
+  - url: https://www.23andme.org/llms.txt
+    status: 200
+  - url: https://www.23andme.org/shop/compare-dna-tests/
+    status: 200
+  - url: https://www.23andme.org/
+    status: 200

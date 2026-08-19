@@ -1,17 +1,68 @@
-generated: '2026-07-17'
+generated: '2026-08-15'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+note: >-
+  probe-domain-security.py covers the hosts named in apis.yml, which is now the
+  canonical www.23andme.org. The 23andme.com apex and the api.23andme.com host were
+  probed by hand on the same date and appended here, because 23andMe still runs its
+  account, auth, API and support subdomains on 23andme.com even though the consumer
+  site migrated to 23andme.org.
 hosts:
+- host: www.23andme.org
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  6 21:49:47 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
 - host: www.23andme.com
   https: true
   tls_version: TLSv1.3
-  cert_expires: Sep 29 04:13:45 2026 GMT
   hsts: true
   hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  hsts_preload: true
+  http_status: 301
+  redirects_to: https://www.23andme.org/
+- host: api.23andme.com
+  https: true
+  tls_version: TLSv1.3
+  cert_verify: 0 (ok)
+  hsts: true
+  hsts_max_age: 63072000
+  hsts_include_subdomains: true
+  hsts_preload: true
+  http_status: 403
+  waf: 'Cloudflare managed challenge (cf-mitigated: challenge)'
 domains:
-- domain: 23andme.com
+- domain: 23andme.org
   dnssec: false
   caa: []
   spf: true
   dmarc: true
   dmarc_policy: quarantine
+- domain: 23andme.com
+  dnssec: false
+  caa: []
+  spf: true
+  spf_policy: ~all
+  dmarc: true
+  dmarc_policy: quarantine
+  dmarc_subdomain_policy: quarantine
+  dmarc_pct: 100
+  dmarc_aggregate_reporting: true
+  dmarc_forensic_reporting: true
+findings:
+- id: no-dnssec
+  detail: Neither 23andme.org nor 23andme.com is DNSSEC-signed (no DS record).
+- id: no-caa
+  detail: >-
+    Neither domain publishes a CAA record, so any public CA may issue for them. Notable
+    for a company holding consumer genetic data.
+- id: dmarc-not-reject
+  detail: >-
+    Both domains sit at p=quarantine rather than p=reject, on both the domain and its
+    subdomains. Aggregate and forensic reporting are configured (dmarcian).
+- id: hsts-strong
+  detail: >-
+    All three hosts send HSTS with max-age=63072000 (two years), includeSubDomains and
+    preload.

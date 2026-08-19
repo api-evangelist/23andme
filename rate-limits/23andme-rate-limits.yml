@@ -1,0 +1,34 @@
+generated: '2026-08-15'
+method: searched
+source: >-
+  https://www.23andme.org/ (642-URL sitemap walked), https://www.23andme.org/llms.txt,
+  https://www.23andme.org/partners/marketplace/, and the legacy developer portal at
+  https://api.23andme.com/dev/
+limit_count: 0
+note: >-
+  No published rate limits. 23andMe currently documents no public API, so there is no
+  reference page on which limits could be stated. The 642-URL sitemap at
+  www.23andme.org contains no developer, API or reference page; llms.txt lists no API;
+  and the only developer surface the company still links — https://api.23andme.com/dev/
+  — answers a Cloudflare managed challenge (HTTP 403, cf-mitigated: challenge) to
+  anonymous requests, so any limits documented behind it could not be read. This is a
+  recorded absence, not an assertion that no limits are enforced.
+headers: []
+responses: []
+evidence:
+- url: https://www.23andme.org/sitemap.xml
+  status: 200
+  finding: 642 URLs, none of them a developer, API or reference page.
+- url: https://www.23andme.org/llms.txt
+  status: 200
+  finding: >-
+    Provider-published site guide. Its "Strategic Partners & Developers" section links
+    only /clinicians/ and /partners/ — no API, no reference, no limits.
+- url: https://api.23andme.com/dev/
+  status: 403
+  finding: Cloudflare managed challenge interstitial; developer portal not readable.
+- url: https://www.23andme.org/partners/marketplace/
+  status: 200
+  finding: >-
+    Markets API and raw-data integration to partners and gives an email contact
+    (marketplace@23andme.com), but publishes no limits, quotas or throttling policy.

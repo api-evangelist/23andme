@@ -1,0 +1,68 @@
+generated: '2026-08-15'
+method: probed
+source: >-
+  live probes of 23andme.com / 23andme.org / api.23andme.com hosts plus the
+  provider-published llms.txt and Marketplace developer page
+note: >-
+  No versioning policy, no deprecation policy, no SLA and no status page could be
+  found. No StatusPage or Deprecation pointer is emitted in apis.yml, because neither
+  document exists — this file records verified absences alongside the one lifecycle
+  event that IS documented: the migration of the entire consumer surface from
+  23andme.com to 23andme.org under the 23andMe Research Institute.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+  note: No API is published, so no versioning scheme is documented.
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: >-
+    No deprecation policy page. The one documented deprecation is the API program
+    itself — 23andMe restricted the Personal Genome API to approved partners and closed
+    general third-party developer access in September 2018. It has not been reinstated.
+sla:
+  url: null
+  uptime_target: null
+status_page:
+  url: null
+  probed:
+  - url: https://status.23andme.com/
+    status: NXDOMAIN
+  - url: https://status.23andme.org/
+    status: NXDOMAIN
+  - url: https://23andme.statuspage.io/
+    status: 302
+    note: Redirects to atlassian.com/software/statuspage — the vendor marketing page,
+      not a 23andMe status page. Not a hit.
+domain_migration:
+  from: www.23andme.com
+  to: www.23andme.org
+  evidence:
+  - url: https://www.23andme.com/.well-known/security.txt
+    status: 301
+    redirects_to: https://www.23andme.org/.well-known/security.txt
+  - url: https://blog.23andme.com/
+    status: 200
+    redirects_to: https://www.23andme.org/blog/
+  operating_entity: 23andMe Research Institute (non-profit)
+  note: >-
+    llms.txt states the canonical domain is https://www.23andme.org, "migrated from
+    23andMe.com", and robots.txt carries the copyright "(c) 2026 23andMe Research
+    Institute". Every www.23andme.com path probed 301s to the .org equivalent. The
+    23andme.com apex is still used for account, auth, API and support subdomains
+    (you., auth., api., customercare., merch., refer.).
+surviving_23andme_com_hosts:
+- host: api.23andme.com
+  status: 403
+  note: Legacy Personal Genome API host; Cloudflare managed challenge to anonymous requests.
+- host: auth.23andme.com
+  status: 403
+  note: Sign-in host; named in the provider's own anti-phishing guidance.
+- host: you.23andme.com
+  status: 403
+  note: Customer account host; www.23andme.org/start/ redirects here.
+- host: customercare.23andme.com
+  status: 403
+  note: Zendesk help center; linked from llms.txt and reachable in a browser.
+deprecated_operations: []
