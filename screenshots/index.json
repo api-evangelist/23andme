@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "23andme",
+    "captured_at": "2026-10-11T134420",
+    "source_url": "https://www.23andme.org/",
+    "source_type": "Website",
+    "file": "23andme-2026-10-11T134420.png",
+    "bytes": 219054,
+    "capture": "playwright-local"
+  }
+]
