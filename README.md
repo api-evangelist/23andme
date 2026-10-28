@@ -64,6 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-23andMe is a company surfaced as a portfolio company of altimeter-capital, gv, sapphire-ventures and added to the API Evangelist network as a stub for enrichment. Sector: healthtech. This profile is a lead awaiting the enrichment pipeline.
+23andMe is a consumer genetics company founded in 2006 that sells saliva-based DNA test kits and returns ancestry composition across 4,500+ regions, DNA relative matching, FDA-cleared genetic health predisposition and carrier-status reports, pharmacogenetics, polygenic risk scores, wellness and trait insights, plus a Total Health tier adding exome sequencing, biannual blood testing and genetics-informed telehealth. It is now operated by the 23andMe Research Institute, a non-profit, following the company's 2025 Chapter 11 bankruptcy; the canonical consumer domain migrated from 23andme.com to 23andme.org, which serves the company's llms.txt, trust center and shop. 23andMe published a scope-gated OAuth 2.0 Personal Genome API at api.23andme.com but closed general third-party developer access in September 2018. It still markets API and raw-data integration through the 23andMe Marketplace as a partner arrangement, though no machine-readable contract, API reference, pricing or rate limits are published publicly, and the developer portal host answers a Cloudflare bot challenge to anonymous requests.
 
-Backed by: altimeter-capital, gv, sapphire-ventures — https://www.23andme.com
+**Areas:** Company · Health Tech · Genetics · Genomics · DNA Testing · Ancestry · Consumer Health · Bioinformatics · Precision Medicine · Pharmacogenomics · Telehealth · Health Research
+
+## 23andMe on APIs.io
+
+Everything profiled for 23andMe is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/23andme/](https://apis.io/providers/23andme/)** — or go straight to one of the APIs or properties below.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [23Andme Domain Security](https://apis.io/security/23andme/23andme-domain-security/)
+- [23Andme Trust Center](https://apis.io/security/23andme/23andme-trust-center/)
+- [23Andme Vulnerability Disclosure](https://apis.io/security/23andme/23andme-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [23Andme Plans Pricing](https://apis.io/plans/23andme/23andme-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [23Andme Rate Limits](https://apis.io/rate-limits/23andme/23andme-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.23andme.org/)
+- [Pricing](https://www.23andme.org/shop/compare-dna-tests/)
+- [Support](https://customercare.23andme.com/hc/en-us)
+- [Blog](https://www.23andme.org/blog/)
+- [Security](https://hackerone.com/23andme_bbp?type=team)
+- [Compliance](https://www.23andme.org/trust-center/)
+- [Terms of service](https://www.23andme.org/legal/terms-of-service/)
+- [Privacy policy](https://www.23andme.org/legal/privacy/)
+- [GitHub](https://github.com/23andMe)
+
+## API Evangelist rating
+
+**Kin Score 28.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 78.9 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 23.4** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/23andme/](https://apis.io/providers/23andme/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for 23andMe: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/23andme/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
